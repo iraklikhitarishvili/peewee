@@ -927,7 +927,7 @@ class Field(Node):
 
     def db_value(self, value):
         """Convert the python value for storage in the database."""
-        return value if value is None else self.coerce(value)
+        return 'NULL' if value is None else self.coerce(value)
 
     def python_value(self, value):
         """Convert the database value to a pythonic value."""
